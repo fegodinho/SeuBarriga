@@ -8,7 +8,7 @@ import br.ce.fegodinho.core.DriverFactory;
 public class LoginPage extends BasePage {
 	
 	public void acessarTelaInicial() {
-		DriverFactory.getDriver().get("https://srbarriga.herokuapp.com");
+		DriverFactory.getDriver().get("http://seubarriga.wcaquino.me/");
 	}
 	
 	public void setEmail(String email) {
