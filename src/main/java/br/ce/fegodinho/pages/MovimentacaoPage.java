@@ -1,5 +1,7 @@
 package br.ce.fegodinho.pages;
 
+import static br.ce.fegodinho.core.DriverFactory.getDriver;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +9,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import br.ce.fegodinho.core.BasePage;
-import br.ce.fegodinho.core.DriverFactory;
 
 public class MovimentacaoPage extends BasePage {
 	
@@ -48,7 +49,7 @@ public class MovimentacaoPage extends BasePage {
 	}
 	
 	public List<String> obterErros(){
-		List<WebElement> erros = DriverFactory.getDriver()
+		List<WebElement> erros = getDriver()
 				.findElements(By.xpath("//div[@class='alert alert-danger']//li"));
 		List<String> retorno = new ArrayList<String>();
 		for (WebElement erro: erros) {
