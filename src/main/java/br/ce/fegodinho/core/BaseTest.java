@@ -9,28 +9,15 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.After;
-import org.junit.Before;
 import org.junit.Rule;
 import org.junit.rules.TestName;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-import br.ce.fegodinho.pages.LoginPage;
-
 public class BaseTest {
-	
-	private LoginPage page = new LoginPage();
 	
 	@Rule
 	public TestName testname = new TestName();
-	
-	@Before
-	public void Inicializa() {
-		page.acessarTelaInicial();
-		page.setEmail("felipe@godinho");
-		page.setSenha("123456");
-		page.entrar();
-	}
 	
 	@After
 	public void finalizacao() throws IOException {

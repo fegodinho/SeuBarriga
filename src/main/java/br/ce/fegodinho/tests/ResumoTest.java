@@ -8,7 +8,6 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 import br.ce.fegodinho.core.BaseTest;
-import br.ce.fegodinho.core.DriverFactory;
 import br.ce.fegodinho.pages.MenuPage;
 import br.ce.fegodinho.pages.ResumoPage;
 

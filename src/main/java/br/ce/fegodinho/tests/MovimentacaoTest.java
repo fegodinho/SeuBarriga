@@ -12,6 +12,7 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 import br.ce.fegodinho.core.BaseTest;
+import br.ce.fegodinho.core.Propriedades;
 import br.ce.fegodinho.pages.MenuPage;
 import br.ce.fegodinho.pages.MovimentacaoPage;
 import br.ce.fegodinho.utils.DataUtils;
@@ -32,7 +33,7 @@ public class MovimentacaoTest extends BaseTest {
 		movPage.setDescricao("Movimentação do Teste");
 		movPage.setInteressado("Interessado Qualquer");
 		movPage.setValor("500");
-		movPage.setConta("Conta do Teste Alterada");
+		movPage.setConta(Propriedades.NOME_CONTA_ALTERADA);
 		movPage.setStatusPago();
 		movPage.salvar();
 		
@@ -72,7 +73,7 @@ public class MovimentacaoTest extends BaseTest {
 		movPage.setDescricao("Movimentação do Teste");
 		movPage.setInteressado("Interessado Qualquer");
 		movPage.setValor("500");
-		movPage.setConta("Conta do Teste Alterada");
+		movPage.setConta(Propriedades.NOME_CONTA_ALTERADA);
 		movPage.setStatusPago();
 		movPage.salvar();
 		
