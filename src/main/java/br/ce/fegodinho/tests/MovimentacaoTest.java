@@ -7,12 +7,16 @@ import java.util.Date;
 import java.util.List;
 
 import org.junit.Assert;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import br.ce.fegodinho.core.BaseTest;
 import br.ce.fegodinho.pages.MenuPage;
 import br.ce.fegodinho.pages.MovimentacaoPage;
 import br.ce.fegodinho.utils.DataUtils;
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
 public class MovimentacaoTest extends BaseTest {
 	
@@ -20,7 +24,7 @@ public class MovimentacaoTest extends BaseTest {
 	private MovimentacaoPage movPage = new MovimentacaoPage();
 	
 	@Test
-	public void testInserirMovimentacao() {
+	public void test_1InserirMovimentacao() {
 		menuPage.acessarTelaInserirMovimentacao();
 		
 		movPage.setDataMovimentacao(obterDataFormatada(new Date()));
@@ -36,7 +40,7 @@ public class MovimentacaoTest extends BaseTest {
 	}
 	
 	@Test
-	public void testCamposObrigatorios() {
+	public void test_2CamposObrigatorios() {
 		menuPage.acessarTelaInserirMovimentacao();
 		movPage.salvar();
 		
@@ -57,7 +61,7 @@ public class MovimentacaoTest extends BaseTest {
 	}
 	
 	@Test
-	public void testInserirMovimentacaoFutura() {
+	public void test3_InserirMovimentacaoFutura() {
 		
 		menuPage.acessarTelaInserirMovimentacao();
 		

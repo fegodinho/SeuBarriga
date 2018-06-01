@@ -12,7 +12,7 @@ public class SaldoTest extends BaseTest {
 	
 	@Test
 	public void testSaldoConta() {
-		Assert.assertEquals("156.00", page.obterSaldoConta("Conta exemplo"));
+		Assert.assertEquals("500.00", page.obterSaldoConta("Conta do Teste Alterada"));
 		
 	}
 
