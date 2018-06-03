@@ -7,16 +7,17 @@ import java.util.Date;
 import java.util.List;
 
 import org.junit.Assert;
-import org.junit.FixMethodOrder;
 import org.junit.Test;
-import org.junit.runners.MethodSorters;
 
 import br.ce.fegodinho.core.BaseTest;
 import br.ce.fegodinho.pages.MenuPage;
 import br.ce.fegodinho.pages.MovimentacaoPage;
 import br.ce.fegodinho.utils.DataUtils;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+//@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+//Solucao alternativa para definir a ordem de execucao dos testes na classe
+//para que funcione, necessario renomear os testes de acordo
+//ex. adicionando um prefixo test1, test2...
 
 public class MovimentacaoTest extends BaseTest {
 	
@@ -24,7 +25,7 @@ public class MovimentacaoTest extends BaseTest {
 	private MovimentacaoPage movPage = new MovimentacaoPage();
 	
 	@Test
-	public void test_1InserirMovimentacao() {
+	public void testInserirMovimentacao() {
 		menuPage.acessarTelaInserirMovimentacao();
 		
 		movPage.setDataMovimentacao(obterDataFormatada(new Date()));
@@ -40,7 +41,7 @@ public class MovimentacaoTest extends BaseTest {
 	}
 	
 	@Test
-	public void test_2CamposObrigatorios() {
+	public void testCamposObrigatorios() {
 		menuPage.acessarTelaInserirMovimentacao();
 		movPage.salvar();
 		
@@ -61,7 +62,7 @@ public class MovimentacaoTest extends BaseTest {
 	}
 	
 	@Test
-	public void test3_InserirMovimentacaoFutura() {
+	public void testInserirMovimentacaoFutura() {
 		
 		menuPage.acessarTelaInserirMovimentacao();
 		

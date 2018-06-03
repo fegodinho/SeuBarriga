@@ -1,15 +1,16 @@
 package br.ce.fegodinho.tests;
 
 import org.junit.Assert;
-import org.junit.FixMethodOrder;
 import org.junit.Test;
-import org.junit.runners.MethodSorters;
 
 import br.ce.fegodinho.core.BaseTest;
 import br.ce.fegodinho.pages.ContasPage;
 import br.ce.fegodinho.pages.MenuPage;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+//@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+//Solucao alternativa para definir a ordem de execucao dos testes na classe
+//para que funcione, necessario renomear os testes de acordo
+//ex. adicionando um prefixo test1, test2...
 
 public class ContaTest extends BaseTest {
 	
@@ -17,7 +18,7 @@ public class ContaTest extends BaseTest {
 	ContasPage contasPage = new ContasPage();
 	
 	@Test
-	public void test1_InserirConta() {
+	public void testInserirConta() {
 		menuPage.acessarTelaInserirConta();
 		
 		contasPage.setNome("Conta do Teste");
@@ -27,7 +28,7 @@ public class ContaTest extends BaseTest {
 	}
 	
 	@Test
-	public void test2_AlterarConta() {
+	public void testAlterarConta() {
 		menuPage.acessarTelaListarConta();
 		
 		contasPage.clicarAlterarConta("Conta para alterar");
@@ -38,7 +39,7 @@ public class ContaTest extends BaseTest {
 	}
 	
 	@Test
-	public void test3_InserirContaMesmoNome() {
+	public void testInserirContaMesmoNome() {
 		menuPage.acessarTelaInserirConta();
 		contasPage.setNome("Conta mesmo nome");
 		contasPage.salvar();
