@@ -59,6 +59,25 @@ public class DriverFactory {
 				e.printStackTrace();
 			}
 		}
+		if(Propriedades.TIPO_EXECUCAO == TipoExecucao.NUVEM) {
+			DesiredCapabilities cap = null;
+			switch (Propriedades.BROWSER) {
+			case FIREFOX: cap = DesiredCapabilities.firefox(); break;
+			case CHROME: cap = DesiredCapabilities.chrome(); break;
+			case INTERNET_EXPLORER: cap = DesiredCapabilities.internetExplorer();
+									cap.setCapability("platform", "Windows 7");
+									cap.setCapability("version", "10.0");			
+			break;
+			case MICROSOFT_EDGE: cap = DesiredCapabilities.edge(); break;			
+			}
+			try {
+				driver = new RemoteWebDriver(new URL("http://fegodinho:172fcd87-6b7d-4c8d-8693-e20c903affa4@ondemand.saucelabs.com:80/wd/hub"), cap);
+				//URL= http://usuario_saucelabs:chave_saucelabs@URLsaucelabs
+			} catch (MalformedURLException e) {
+				System.err.println("Falha na conexão com a Saucelabs");
+				e.printStackTrace();
+			}
+		}
 		
 		driver.manage().window().setSize(new Dimension(1200, 765));			
 		return driver;
